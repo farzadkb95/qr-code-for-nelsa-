@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Page with Buttons</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/png"
+        href="https://www.nelsabeauty.com/wp-content/uploads/2022/12/logooooNEWw-1-112x112.png" />
+    <style>
+
+        @font-face {
+            font-family: 'IRANYekanMedium';
+            src: url('IRANYekanMedium.ttf') format('truetype');
+        }
+
+        body {
+            background-color: #222831;
+            color: #EEEEEE;
+            font-family: 'IRANYekanMedium', Arial, sans-serif;
+            direction: rtl!important;
+        }
+
+        .btn {
+            background-color: #7e57c2;
+            color: white;
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+            font-size: 1rem;
+            text-transform: uppercase;
+            flex: 1 1 30%;
+            /* Equal width for all buttons */
+            max-width: 200px;
+            /* Limit maximum width */
+            height: 4rem;
+        }
+
+        .btn:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            /* Adjust the margin as needed */
+        }
+
+        .logo-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .text-purple {
+            color: #7e57c2;
+        }
+
+        h1.text-purple {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h1.text-purple::before {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 5px;
+            background-color: #7e57c2;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 10px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: #393e46;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            margin: 5px;
+            transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 16px 32px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .address-card {
+            background-color: #393e46;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            margin: 10px 0;
+            transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .address-card:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 16px 32px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .address-card h4 {
+            color: #7e57c2;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .address-card p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        consult-card {
+            background-color: #393e46;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 1.5rem;
+            margin: 10px 0;
+            transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .consult-card:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 16px 32px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .consult-card h4 {
+            color: #7e57c2;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .consult-card p {
+            font-size: 1rem;
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .consult-card p i {
+            margin-right: 10px;
+            color: #7e57c2;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <div class="d-flex justify-content-center mb-3 logo-container">
+                    <img src="https://www.nelsabeauty.com/wp-content/uploads/2022/12/logooooNEWw-1-112x112.png"
+                        alt="Beautiful Logo" class="mb-3">
+                </div>
+                <h1 class="text-purple">  نلسا بیوتی</h1>
+                <div class="card mt-4" style="background: rgba(255, 255, 255, 0.02);
+                border-radius: 16px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(13.3px);
+                -webkit-backdrop-filter: blur(13.3px);
+                border: 1px solid rgba(255, 255, 255, 0.3);">
+                     <p style="font-size: 1.1rem; line-height: 1.6; text-align: justify;">
+برای دریافت لیست قیمت ، به روی شعبه مورد نظر کلیک کنید.                     </p>
+                </div>
+
+                <div class="card">
+                    <div class="button-container">
+                        <button class="btn btn-purple"
+                            onclick="window.location.href='https://www.nelsabeauty.com/qr/price1.html'"><i
+                                class="fas fa-map-marker-alt"></i> سمنان </button>
+                        <button class="btn btn-purple"
+                            onclick="window.location.href='https://www.nelsabeauty.com/qr/price1.html'"><i
+                                class="fas fa-map-marker-alt"></i> گرمسار </button>
+                        <button class="btn btn-purple"
+                            onclick="window.location.href='https://www.nelsabeauty.com/qr/price1.html'"><i
+                                class="fas fa-map-marker-alt"></i> تالش </button>
+                        <button class="btn btn-purple"
+                            onclick="window.location.href='https://www.nelsabeauty.com/qr/price1.html'"><i
+                                class="fas fa-map-marker-alt"></i> آستارا </button>
+                        <button class="btn btn-purple"
+                            onclick="window.location.href='https://www.nelsabeauty.com/qr/price1.html'"><i
+                                class="fas fa-map-marker-alt"></i> آستانه اشرفیه </button>
+                        <button class="btn btn-purple"
+                            onclick="window.location.href='https://www.nelsabeauty.com/qr/price1.html'"><i
+                                class="fas fa-map-marker-alt"></i> بندرانزلی </button>
+                        <button class="btn btn-purple"
+                            onclick="window.location.href='https://www.nelsabeauty.com/qr/price1.html'"><i
+                                class="fas fa-map-marker-alt"></i> لاهیجان </button>
+                        <button class="btn btn-purple"
+                            onclick="window.location.href='https://www.nelsabeauty.com/qr/price1.html'"><i
+                                class="fas fa-map-marker-alt"></i> دامغان </button>
+
+
+                    </div>
+                </div>
+
+
+
+                <div class="consult-card">
+                    <div class="card mt-4 p-3">
+                        <h4 class="text-purple">مشاوره</h4>
+                        <table class="table text-white">
+                            <tbody>
+                                <tr>
+                                    <td style="border-top: none; border-bottom: 1px solid #7e57c2;"><i
+                                            class="fas fa-phone-alt"></i> ۰۹۱۹۷۵۰۴۵۵۴</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none; border-bottom: 1px solid #7e57c2;"><i
+                                            class="fas fa-phone-alt"></i> ۰۹۱۹۷۵۰۹۲۲۹</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none; border-bottom: 1px solid #7e57c2;"><i
+                                            class="fas fa-phone-alt"></i> ۰۹۱۹۷۵۰۷۵۴۶</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none; border-bottom: 1px solid #7e57c2;"><i
+                                            class="fas fa-phone-alt"></i> ۰۹۱۹۷۵۰۷۵۶۱</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none; border-bottom: 1px solid #7e57c2;"><i
+                                            class="fas fa-phone-alt"></i> ۰۹۱۹۷۵۰۷۵۶۳</td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none;"><i class="fas fa-phone-alt"></i> ۰۹۱۹۷۵۰۲۸۳۲</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+                </div>
+                <div class="card mt-4" style="background: rgba(255, 255, 255, 0.02);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(13.3px);
+-webkit-backdrop-filter: blur(13.3px);
+border: 1px solid rgba(255, 255, 255, 0.3);">
+                    <h4 class="text-purple">درباره ما</h4>
+                    <p style="font-size: 1.1rem; line-height: 1.6; text-align: justify;">
+                        مرکز زیبایی نلسا ارائه دهنده انواع خدمات زیبایی و لیزر موهای زائد و جوانسازی، در شهر شماست.
+                        ما با تمرکز بر سه ویژگی نوآوری، در دسترس بودن و منحصر به فرد بودن، در کنار شما خواهیم بود.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.6; text-align: justify;">
+                        از این‌که همراه شما هستیم، تا زیبایی شما رو چندین برابر کنیم بسیار خوشحالیم.
+                        امیدواریم از خدمات ما به همان اندازه که ما از ارائه آن‌ها به شما لذت می‌‌بریم لذت ببرید.
+                    </p>
+                </div>
+
+                </br>
+                <h1 class="text-purple">آدرس شعبه های نلسا </h1>
+
+                <div class="address-card">
+                    <h4>سمنان</h4>
+                    <p>ساختمان پردیس پزشکان بوعلی، طبقه چهار، واحد ۴۱۲</p>
+                    <p>نوبت‌دهی: ۰۹۱۹۷۵۰۵۳۳۵</p>
+                </div>
+                <div class="address-card">
+                    <h4>گرمسار</h4>
+                    <p>خیابان طالقانی، نبش خیابان اندرزگو، ساختمان الهیه، طبقه چهار، واحد ۸</p>
+                    <p>نوبت‌دهی: ۰۹۱۹۷۵۰۶۳۳۶</p>
+                </div>
+                <div class="address-card">
+                    <h4>تالش</h4>
+                    <p>خیابان طالقانی، جنب مسجد قاسمیه</p>
+                    <p>نوبت‌دهی: ۰۹۱۹۷۵۰۹۶۶۹</p>
+                </div>
+                <div class="address-card">
+                    <h4>آستارا</h4>
+                    <p>خیابان فارابی، نرسیده به چهارراه شریعتی، رو به روی پست بانک، ساختمان آرین، طبقه یک، واحد ۱
+                    </p>
+                    <p>نوبت‌دهی: ۰۹۱۹۷۵۰۱۲۲۱</p>
+                </div>
+                <div class="address-card">
+                    <h4>آستانه اشرفیه</h4>
+                    <p>میدان فردوسی، رو به روی افق کوروش</p>
+                    <p>نوبت‌دهی: ۰۹۱۹۷۵۰۱۲۲۱</p>
+                </div>
+                <div class="address-card">
+                    <h4>بندرانزلی</h4>
+                    <p>رو به روی بیمارستان شهید بهشتی، ساختمان پزشکی جانا، طبقه دو، واحد ۴</p>
+                    <p>نوبت‌دهی: ۰۹۱۹۷۵۰۸۶۶۸</p>
+                </div>
+                <div class="address-card">
+                    <h4>لاهیجان</h4>
+                    <p>خیابان قیام، نبش قیام یازده، ساختمان میران، طبقه چهارم، واحد ۹</p>
+                    <p>نوبت‌دهی: ۰۹۱۹۷۵۰۳۱۱۳</p>
+                </div>
+                <div class="address-card">
+                    <h4>دامغان</h4>
+                    <p>خیابان خندق، کوچه شهید حسنی، طبقه سوم آموزشگاه مهشید</p>
+                    <p>نوبت‌دهی: ۰۹۱۹۷۵۰۷۵۳۹</p>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
+</body>
+
+</html>
